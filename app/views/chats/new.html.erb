@@ -1,0 +1,5 @@
+		<%= form_for(@chat) do |f| %>
+			<%= f.hidden_field sessionId: sessionId %>
+			<%= f.hidden_field token: token %>
+		<%= f.submit %>
+		<% end %>

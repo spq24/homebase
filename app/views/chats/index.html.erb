@@ -1,0 +1,26 @@
+<div id="newRoom">
+	<fieldset>
+		<legend>Start a new party chat</legend>
+		<%= button_to 'Start Chat', new_chat_path %>
+	</fieldset>
+</div>
+
+	<fieldset>
+		<legend>Existing party chats</legend>
+		<table cellpadding="2" cellspacing="5">
+			<tr>
+				<th>ID</th>
+				<th>Started</th>
+			</tr>
+
+				<% @chats.each do |chat| %>
+			<tr>
+				<td align="center" width="300px"><a href="/party/<%= chat.id %>"><%= chat.id %></a></td>
+				<td><%= chat.created_at %></td>
+			</tr>
+		<% end %>
+
+		<%= @numbers.all %>
+
+		</table>
+	</fieldset>
